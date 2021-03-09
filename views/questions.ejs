@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css" />
+    <title>Document</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #0c102b;
+
+        }
+
+        .container {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 4em;
+            width: 60%;
+            border-radius: 4px;
+            background-color: rgb(1, 7, 5);
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .checkmark {
+            position: absolute;
+            left: 25px;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input~.checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .container input:checked~.checkmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the checkmark/indicator (hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the checkmark when checked */
+        .container input:checked~.checkmark:after {
+            display: block;
+        }
+
+        /* Style the checkmark/indicator */
+        .container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .options {
+            font-size: 1em;
+            color: aliceblue;
+            margin-top: 10%;
+        }
+
+        .main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .que {
+            color: aliceblue;
+            font-size: 2em;
+        }
+
+        .btext {
+            color: aliceblue;
+            font-size: 1em;
+        }
+
+        #first,
+        #second,
+        #third,
+        #fourth,
+        #fifth {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .arrow {
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .btndiv {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1em;
+        }
+
+        .next {
+            border-radius: 50%;
+            height: 3em;
+            width: 3em;
+            background-color: rgb(221, 157, 61);
+        }
+
+        .rangeoption {
+            display: flex;
+            font-size: 1em;
+            color: aliceblue;
+            margin-top: 10%;
+            flex-direction: column;
+        }
+
+        .rangeoption input {
+            margin-top: 1em;
+        }
+
+        .time {
+            margin-left: 20%;
+            position: relative;
+            height: 4em;
+            width: 60%;
+            border-radius: 4px;
+            background-color: rgb(1, 7, 5);
+            padding-left: 35px;
+            margin-bottom: 1em;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .logout{
+            position: fixed;
+            top: 2em;
+            right: 2em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- <h1 class="mt-4">Dashboard</h1>
+    <p class="lead mb-3">Welcome User</p>-->
+    <a href="/users/logout" class="btn btn-secondary logout">Logout</a> 
+    <form action="/questions" method="post">
+        <div class="main">
+            <div id="first">
+                <div>
+                    <p class="que">Let's say in a few weeks, you're sleeping well. What would change?</p>
+                    <p class="btext">select all the changes you would like to see</p>
+                </div>
+                <div class="options">
+                    <label class="container" style="background-color: #4e9da9;"> I would go to sleep easily
+                        <input type="checkbox" name="first" value="I would go to sleep easily">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="background-color: #694ea9;">I would through the night
+                        <input type="checkbox" name="first" value="I would through the night">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="background-color: #414972;">I'd wake up on time,refreshed
+                        <input type="checkbox" name="first" value="I'd wake up on time,refreshed">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="btndiv">
+                    <button class="next" id="fbtn" type="button"><i class="arrow down"></i></button>
+                </div>
+            </div>
+            <div id="second" style="display: none;">
+                <div>
+                    <p class="que">That's a great goal. How long have you been struggling with your sleep?</p>
+
+                </div>
+                <div class="options">
+                    <label class="container" style="background-color: #4e9da9;"> Less than 2 weeks
+                        <input type="radio" name="second" value="Less than 2 weeks">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="background-color: #694ea9;"> 2 to 8 weeks
+                        <input type="radio" name="second" value="2 to 8 weeks">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="container" style="background-color: #414972;"> More than 8 weeks
+                        <input type="radio" name="second" value="More than 8 weeks">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="btndiv">
+                    <button class="next" id="sbtn" type="button"><i class="arrow down"></i></button>
+                </div>
+            </div>
+            <div id="third" style="display: none;">
+                <div>
+                    <p class="que">What time do you go to bed for sleep?</p>
+
+                </div>
+                <div class="rangeoption">
+                    <div class="time" style="background-color: #4e9da9;">
+                        <label for="hour">Hour</label>
+                        <input type="number" name="thirdhour" id="hour" step="1" max="12" min="1">
+                    </div>
+                    <div class="time" style="background-color: #694ea9;">
+                        <label for="minute">Minutes</label>
+                        <input type="number" name="thirdminute" id="minute" step="1" max="60" min="0">
+                    </div>
+                </div>
+                <div class="btndiv">
+                    <button class="next" id="tbtn" type="button"><i class="arrow down"></i></button>
+                </div>
+            </div>
+            <div id="fourth" style="display: none;">
+                <div>
+                    <p class="que">What time do youget out of bed to start your day?</p>
+
+                </div>
+                <div class="rangeoption">
+                    <div class="time" style="background-color: #4e9da9;">
+                        <label for="whour">Hour</label>
+                        <input type="number" name="fourthhour" id="whour" step="1" max="12" min="1">
+                    </div>
+                    <div class="time" style="background-color: #694ea9;">
+                        <label for="wminute">Minutes</label>
+                        <input type="number" name="fourthminute" id="wminute" step="1" max="60" min="0">
+                    </div>
+                </div>
+                <div class="btndiv">
+                    <button class="next" id="fobtn" type="button"><i class="arrow down"></i></button>
+                </div>
+            </div>
+            <div id="fifth" style="display: none;">
+                <div>
+                    <p class="que">What time do youget out of bed to start your day?</p>
+
+                </div>
+                <div class="rangeoption">
+                    <div class="time" style="background-color: #4e9da9;">
+                        <label for="thour">Hour</label>
+                        <input type="number" name="fifthhour" id="thour" step="1" max="12" min="1">
+                    </div>
+                </div>
+                <div class="btndiv">
+                    <button class="next" id="sub" type="button"><i class="arrow down"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        var fbtn = document.getElementById('fbtn');
+        var sbtn = document.getElementById('sbtn');
+        var tbtn = document.getElementById('tbtn');
+        var fobtn = document.getElementById('fobtn');
+        var sub = document.getElementById('sub');
+
+        var first = document.getElementById('first');
+        var second = document.getElementById('second');
+        var third = document.getElementById('third');
+        var fourth = document.getElementById('fourth');
+        var fifth = document.getElementById('fifth');
+
+        fbtn.addEventListener('click', () => {
+            first.style.display = "none";
+            second.style.display = "";
+        })
+
+        sbtn.addEventListener('click', () => {
+            second.style.display = "none";
+            third.style.display = "";
+        })
+
+        tbtn.addEventListener('click', () => {
+            third.style.display = "none";
+            fourth.style.display = "";
+        })
+
+        fobtn.addEventListener('click', () => {
+            fourth.style.display = "none";
+            fifth.style.display = "";
+        })
+
+        sub.addEventListener('click', (e) => {
+            document.getElementsByTagName('form')[0].submit();
+        })
+
+    </script>
+</body>
+
+</html>
