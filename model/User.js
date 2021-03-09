@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const questionSchema = new mongoose.Schema({
     firstQue: [{ type: String }],
-    secondQue: { type: String },
-    thirdQue: { type: Date },
-    fourthQue: { type: Date },
-    fifthQue: { type: Number }
+    secondQue: { type: String,require:true },
+    thirdQue: { type: Date,require:true }, //set time using setHours(Hour,Minutes) and get housr and minute using 
+    fourthQue: { type: Date,require:true }, //  getHours() & getMinutes() method
+    fifthQue: { type: Number,require:true }
 })
 
 const userSchema = new mongoose.Schema({

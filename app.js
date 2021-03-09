@@ -34,13 +34,13 @@ app.use(passport.session());
 //flash middleware
 app.use(flash());
 
-var whitelist = ['http://wysaclone.com']
+var whitelist = ['http://wysaclone.com','http://localhost:5006','https://wysaclone.herokuapp.com/']
 var corsOptions = {
   origin: function (origin, callback) {
       console.log(origin)
-    if (whitelist.indexOf(origin) !== -1 || origin == undefined) { // compare origin undefined because
-      callback(null, true)                                         // request from same origin/ browser doesnt 
-    } else {                                                       // have origin header for development purpose
+    if (whitelist.indexOf(origin) !== -1 || origin == undefined) { 
+      callback(null, true)                                        
+    } else {                                                      
       callback(new Error('Not allowed by CORS'))
     }
   }
@@ -48,6 +48,7 @@ var corsOptions = {
 
 
 app.use(cors(corsOptions))
+
 
 
 //middleware for flash messages

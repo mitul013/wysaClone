@@ -8,14 +8,8 @@ const cors = require('cors');
 const { ensureAuthenticated } = require('../middleware/auth');
 
 
-var corsOptions = {
-    origin: 'http://localhost:5006/',
-    optionsSuccessStatus: 200
-}
-
-
 //preflight for delete route
-router.options('/', cors(corsOptions))
+router.options('/')
 
 router.delete('/', (req, res) => {
     User.findByIdAndRemove(req.user.id).
