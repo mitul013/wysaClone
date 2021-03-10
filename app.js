@@ -34,7 +34,7 @@ app.use(passport.session());
 //flash middleware
 app.use(flash());
 
-var whitelist = ['http://wysaclone.com','http://localhost:5006','https://wysaclone.herokuapp.com/']
+var whitelist = ['http://wysaclone.com','http://localhost:5006','https://wysaclone.herokuapp.com']
 var corsOptions = {
   origin: function (origin, callback) {
       console.log(origin)
