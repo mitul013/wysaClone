@@ -77,4 +77,3 @@ this schema have five field . each field for answer of each questions
 ### userSchema
 this schema has name, password, date, and questionschema which we have created for store answers so basically I have use nested schema feature of mongoose.
 
->>>>>>> 8e123c6076670a666c83d27cfa2d5317f51f011c
