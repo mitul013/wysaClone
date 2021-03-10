@@ -36,7 +36,7 @@
 https://wysaclone.herokuapp.com/
 
 ### Database connection url - 
-mongodb+srv://<username>:<password>@cluster0.u6o94.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+ mongodb+srv://username:password@cluster0.u6o94.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 ### Code (github or other) repository - 
 https://github.com/mitul013/wysaClone
