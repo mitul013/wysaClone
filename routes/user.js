@@ -118,6 +118,7 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res, next) => {
+console.log("hu login ma aavi gyo chhu")
     passport.authenticate('local', {
         successRedirect: '/questions',
         failureRedirect: '/users/login',
