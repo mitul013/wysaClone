@@ -32,9 +32,6 @@ Create .env file and add MONGO_URI = 'your mongodb database uri'
 
 
 ### About wysa clone
-
-when you download sleep wysa app it will ask you five question about you sleeping cycle and then base upon your answers it wiil tell your sleep efficiency
-=======
 when you download sleep wysa app it will ask you five question about you sleeping cycle and then base upon your answers it wiil tell your sleep efficiency
 
 ## Rest API
