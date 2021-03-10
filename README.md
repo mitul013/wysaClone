@@ -24,7 +24,9 @@ For production
 $ npm start
 ```
 
-### Visit http://localhost:5006
+### Visit https://wysaclone.herokuapp.com/
+## Demo_username - demo@gmail.com
+## Demo_password - demo123
 
 Create .env file and add MONGO_URI = 'your mongodb database uri'
 
